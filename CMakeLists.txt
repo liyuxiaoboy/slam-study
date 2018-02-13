@@ -1,13 +1,11 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.6)
+project(eigenmatrix)
 
-project(HelloSLAM)
+include_directories( "/usr/include/eigen3" )
 
-add_library(hello_shared SHARED libHelloSLAM.cpp)
+add_executable(eigenmatrix main.cpp)
 
-add_executable(helloSLAM helloSLAM.cpp)
-
-add_executable(useHello useHello.cpp)
-
-target_link_libraries(useHello hello_shared)
+install(TARGETS eigenmatrix RUNTIME DESTINATION bin)
 
 set(CMAKE_BUILD_TYPE "Debug")
+
