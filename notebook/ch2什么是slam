@@ -28,5 +28,6 @@ RGB-D
 slam本质是：对运动主体和周围环境空间不确定性的估计
 
 数学表达式有两个核心
-1.xk=f(xk-1,uk,wk)
-2.zij=h(yi,xk,vkj)
+1.xk=f(xk-1,uk,wk)(运动方程)
+
+2.zij=h(yi,xk,vkj)（观测方程）
