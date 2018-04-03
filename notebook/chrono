@@ -1,0 +1,21 @@
+chrono::steady_clock::time_point t1 = chrono::steady_clock::now();
+
+【某个耗时程序段】
+
+chrono::steady_clock::time_point t2 = chrono::steady_clock::now();
+chrono::duration<double> time_used = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
+cout << "遍历图像用时：" << time_used.count() << " 秒。" << endl;
+
+用于计算程序的执行时间、我们在自己project里面检验算法的效率的时候可以加上这个框架； 
+上面的代码主要是计算逐像素遍历一张图像需要多长的时间；在使用这个框架的时候需要include进chrono这个库：#include <chrono>
+
+接下来我简单介绍下chrono这个库，chrono是C+11的标准，关于chrono的问题，我参考了这篇博客：http://www.cnblogs.com/jwk000/p/3560086.html
+
+C++11 std::chrono库详解
+
+chrono是一个time library, 源于boost，现在已经是C++标准。要使用chrono库，需要#include，其所有实现均在std::chrono namespace下。
+注意标准库里面的每个命名空间代表了一个独立的概念。需要理解三个概念：duration、time_point、clock；
+
+std::chrono::duration 表示一段时间，是一个时间段
+std::chrono::time_point 表示一个具体时间，时间点。
+std::chrono::system_clock 它表示当前的系统时钟，系统中运行的所有进程使用now()得到的时间是一致的。
