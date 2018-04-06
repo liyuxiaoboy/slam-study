@@ -1,0 +1,10 @@
+如果显示c++11语法错误，可能是没有使用相应语法规则原因，游两个办法
+1.cmakelists中添加
+  set( CMAKE_BUILD_TYPE Release )
+  set( CMAKE_CXX_FLAGS "-std=c++11 -O3" )
+
+2.函数中添加
+#pragma GCC diagnostic error "-std=c++11"
+
+注意16.04中pcl加一句话
+list (REMOVE_ITEM PCL_LIBRARIES "vtkproj4")
