@@ -1,0 +1,19 @@
+Clone the repository and catkin_make:
+    cd ~/catkin_ws/src
+    git clone https://github.com/HKUST-Aerial-Robotics/VINS-Mono.git
+    cd ../
+    catkin_make
+    source ~/catkin_ws/devel/setup.bash
+    
+Open three terminals, launch the vins_estimator , rviz and play the bag file respectively. Take MH_01 for example
+    roslaunch vins_estimator euroc.launch 
+    roslaunch vins_estimator vins_rviz.launch
+    rosbag play YOUR_PATH_TO_DATASET/MH_01_easy.bag
+    
+    (If you fail to open vins_rviz.launch, just open an empty rviz, then load the config file: 
+    file -> Open Config-> YOUR_VINS_FOLDER/config/vins_rviz_config.rviz)!!!!!很重要反正我是没一次打开过
+    运行rviz：
+    在一个控制台中运行
+    roscore
+    在另一个控制台中运行
+    rosrun rviz rviz
