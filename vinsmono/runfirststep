@@ -3,7 +3,8 @@ Clone the repository and catkin_make:
     git clone https://github.com/HKUST-Aerial-Robotics/VINS-Mono.git
     cd ../
     catkin_make
-    source ~/catkin_ws/devel/setup.bash
+    
+    source ~/catkin_ws/devel/setup.bash(每个temiral运行一次这一句也能通过)
     
 Open three terminals, launch the vins_estimator , rviz and play the bag file respectively. Take MH_01 for example
     roslaunch vins_estimator euroc.launch 
@@ -17,3 +18,8 @@ Open three terminals, launch the vins_estimator , rviz and play the bag file res
     roscore
     在另一个控制台中运行
     rosrun rviz rviz
+
+
+
+
+/media/yxli/wenjian/euroc_mav_data/V1_01_easy.bag                          \我的路经
